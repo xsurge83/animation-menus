@@ -1,0 +1,44 @@
+<html ng-app='app'>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" href="animation.css">
+</head>
+<body ng-controller="MainCtrl">
+	<div id="site-wrapper" ng-class="{'show-nav': openMenu }">
+        <div id="site-canvas">
+        	<div id="overlay"></div>
+            <div id="site-menu">
+                <h2>My Menu</h1>
+                <p class="lead">Put any HTML you want here.</p>
+                <p>Style it however you want.</p>
+                <ul>
+                    <li>Free to scroll up and down</li>
+                    <li>But not left and write</li>
+                </ul>
+             </div>
+
+            <a href="#" ng-click="openMenu=!openMenu" class="toggle-nav btn btn-lg btn-success" id="big-sexy"><i class="fa fa-bars"></i> Toggle Nav</a>
+
+             <a href="#" ng-click="openMenu=!openMenu"> pop menu</a>
+            <h1 class="text-center">Canvas</h1>
+            <button ng-click="toggleShow()">Show Menu</button>
+            <button ng-click="toggleLib()">Lib</button>
+            <div ng-class="{'photo-upload': show, 'goto-photo-lib': lib }">
+                <div class='menu' ng-hide="lib">Menu</div>
+                <div class='gallery' ng-show="lib">
+                    <div>Search</div>
+                    <div>Item</div>
+                </div>
+            </div>
+
+       </div><!-- #site-canvas -->
+
+    </div><!-- #site-wrapper> -->
+<script src='vendor/jquery/dist/jquery.js' type="text/javascript"></script>
+<script src='vendor/angular/angular.js' type="text/javascript"></script>
+<script src='vendor/angular-animate/angular-animate.js' type="text/javascript"></script>
+<script src='app.js' type="text/javascript"></script>
+</body>
+</html>
